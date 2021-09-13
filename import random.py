@@ -1,8 +1,8 @@
 import random
 
+
 # creating a welcome function
 def usern_name():
-
     userName = input("what is your name ? \n====>  ")
     userName = userName.upper()
     print(" welcome ", userName, "to our guessing game\n\n", userName, "you have to guess a number from 1 to 50")
@@ -11,7 +11,6 @@ def usern_name():
 # Creating a function that takes two arguments the number of tries and the highest number in the range
 
 def guessing_number(number_of_tries, high_number_range):
-
     generate_random_number = random.randint(1, high_number_range)
     print("enable this comment if you want to see the random number for testing :", generate_random_number)
 
@@ -44,7 +43,6 @@ def guessing_number(number_of_tries, high_number_range):
 # creating the main Function
 
 def guessing_game():
-
     print(
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n welcome to the guessing game \n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
     userName = input("what is your name ? \n====>  ")
@@ -55,15 +53,12 @@ def guessing_game():
 
     while continue_play is True:
 
-
         """
         passing value to the arguments of guessing_game function which can be any values
         ( I chose 9 tries and a range from 1 to 100 )   guessing_number(9, 101)
         """
         generate_random_number = random.randint(1, 101)
-        print("enable this comment if you want to see the random number for testing :", generate_random_number)
-
-
+        #print("enable this comment if you want to see the random number for testing :", generate_random_number)
 
         # try exception to catch unwanted user input
         try:
@@ -80,7 +75,9 @@ def guessing_game():
                     print("\nWELL DONE\n it took you", guess_it_right, "try to guess the right number")
                     win = " winner ==>>   name:", userName, "   Number of guesses: ", guess_it_right
                     print(win)
-                    input()
+                    break
+
+                    
                     """
                     creating a .txt stored file (as data in adictionaries) to
                      track the score of every player has plyed the game
@@ -88,8 +85,8 @@ def guessing_game():
                     dict_win = {"name": userName, "Number of guesses": guess_it_right}
                     # open the txt file for appending or creating it if it does not exist
                     with open("highscore.txt", "a") as f:
-                         print(dict_win, file=f)
-                         break
+                        print(dict_win, file=f)
+                        continue
 
                 elif user_number_guess > 101 or user_number_guess < 1:
                     print("number is not in range \n", "You have", number_of_tries, "tries left")
@@ -114,7 +111,7 @@ def guessing_game():
 
         if keep_playing.upper() == "NO":
             continue_play = False
-            
+
             input("<<<<<<<<<<<<<<<<<<<<<<<<<     thank you for playing the game         >>>>>>>>>>>>>>>>>>>>>>>>>>>>")
             quit()
 
