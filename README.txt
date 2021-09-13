@@ -12,3 +12,4 @@ If the user enters a number out of range (1, 100) the program will account it as
 If the user enters an invalid input, the program will ask the user to enter a valid number and  the guess will start over and  a new random number will be generated.
 
 If the player wins and guess the right number, the program will print the result and the program will as the user to continur playing the game by click any key or type " No " to quit the game.
+the program will print the result of all competitors in a .txt file. 
