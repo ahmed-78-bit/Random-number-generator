@@ -1,0 +1,3 @@
+{'name': 'AHMED', 'Number of guesses': 1}
+{'name': 'TRTST', 'Number of guesses': 5}
+{'name': 'TRTST', 'Number of guesses': 1}
